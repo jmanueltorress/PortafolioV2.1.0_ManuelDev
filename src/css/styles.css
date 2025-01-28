@@ -1,0 +1,303 @@
+/* global-styles */
+@font-face {
+  font-family: "TiltWarp-Regular"; /* Nombre que le das a la fuente */
+  src: url("/src/font/Tilt_Warp/TiltWarp-Regular-VariableFont_XROT\,YROT.ttf")
+    format("truetype");
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --margin-global-l-r: 100px;
+  --color-obscuro-principal: #13005a;
+  --color-obscuro-secundario: #00337c;
+  --color-obscuro-terciario: #1C82AD;
+  --color-enfasis: #03c988;
+  --color-claro-w:#FFF;
+}
+.d-flex {
+  display: flex;
+}
+.center-x-y {
+  justify-content: center;
+  align-items: center;
+}
+
+* {
+  font-family: "TiltWarp-Regular", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box; /* Asegura que los márgenes y paddings no afecten el tamaño total de los elementos */
+}
+body {
+  background-color: var(--color-obscuro-principal);
+}
+/* menu-navegación */
+nav {
+  justify-content: space-between;
+  padding-top: 5vh;
+  margin-left: var(--margin-global-l-r);
+  margin-right: var(--margin-global-l-r);
+  height: 15vh;
+}
+nav a, h1{
+color: var(--color-enfasis);
+}
+  /* Mantener el espacio en blanco dentro del h1 */
+  h1 span {
+    display: inline-block;
+  }
+a {
+  text-decoration: none;
+}
+.nav-main a {
+  border-radius: 5px;
+  padding: 5px 5px;
+}
+/* contenedores */
+.card-container-1, .card-container-3 {
+  background-color: var(--color-obscuro-secundario);
+  height: 70vh;
+  justify-content: space-between;
+}
+.card-container-2, .card-container-4 {
+    background-color: var(--color-obscuro-principal);
+  }
+.card-container-1, .card-container-3 {
+    margin-bottom: 10vh;
+    margin-left: var(--margin-global-l-r);
+    margin-right: var(--margin-global-l-r);
+  }
+.card-container-2 {
+    margin-top: 5vh;
+    margin-bottom: 10vh;
+    margin-left: var(--margin-global-l-r);
+    margin-right: var(--margin-global-l-r);
+  }
+/*Avatar contenedor 1, 2*/
+.avatar {
+  margin-left: 20px;
+}
+.avatar img {
+  padding: 0 20px;
+  width: 200px;
+}
+/* section container-1 distribucion y espacios de contenido*/
+.section-container-1 {
+  flex-direction: column;
+}
+.section-container-1 p{
+    padding: 20px 0 0 20px;
+    color: var(--color-claro-w);
+}
+.section-container-1 p span{
+    color: var(--color-enfasis);
+}
+
+footer {
+  justify-content: space-between;
+  padding-top: 0.5vh;
+  padding-bottom: 0.5vh;
+  padding-left: var(--margin-global-l-r);
+  padding-right: var(--margin-global-l-r);
+}
+footer,
+footer a,
+.nav-main a {
+  color: var(--color-obscuro-secundario);
+  background-color: var(--color-enfasis);
+}
+
+/*Animaciones css*/
+ /* Animación del cursor parpadeante */
+ @keyframes blink {
+    0% { border-color: transparent; }
+    50% { border-color: black; }
+    100% { border-color: transparent; }
+  }
+  h1.cursor {
+    animation: blink 0.7s step-end infinite;
+  }
+ 
+/*Button hover:before efect*/
+
+#section-button{
+    margin-top: 20px;
+}
+  
+  .cv-button {
+
+    display: inline-block;
+    padding: 5px 15px;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: #ffe;
+    text-decoration: none;
+    text-align: center;
+    text-transform: uppercase;
+    background: linear-gradient(45deg, var(--color-obscuro-secundario), var(--color-obscuro-terciario), var(--color-obscuro-secundario));
+    background-size: 200%;
+    border: 1px solid rgba(255, 255, 255, 0.4);
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
+      0 0 20px rgba(106, 90, 205, 0.5);
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .cv-button::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 300%;
+    height: 100%;
+    background: linear-gradient(
+      45deg,
+      rgba(255, 255, 255, 0.3),
+      transparent,
+      rgba(255, 255, 255, 0.3)
+    );
+    -webkit-transform:skewX(-45deg);
+    transform:skewX(-45deg);
+    transition: all 0.3s ease;
+    z-index: 1;
+    opacity: 0.4;
+  }
+  
+  .cv-button span {
+    position: relative;
+    z-index: 2;
+  }
+  
+  .cv-button:hover {
+    background: linear-gradient(45deg, var(--color-obscuro-secundario), var(--color-obscuro-terciario), var(--color-obscuro-secundario));
+    background-size: 300%;
+    animation: gradientShift 1s ease infinite;
+    box-shadow: 0 0 20px var(--color-enfasis), 0 0 30px var(--color-enfasis);
+    transform: scale(1.1);
+  }
+  
+  .cv-button:hover::before {
+    left: 100%;
+    transition: left 0.3s ease;
+  }
+  
+  .cv-button:active {
+    /* more safari fixes */
+    touch-action: manipulation;
+    -webkit-user-select: none; 
+    -webkit-transform: scale(0.98) translateY(2px);
+    
+    transform: scale(0.98) translateY(2px);
+    background: linear-gradient(45deg, #6a5acd, #836fff);
+    box-shadow: 0 0 8px rgba(106, 90, 205, 0.5), 0 0 15px rgba(106, 90, 205, 0.4);
+  }
+  
+  @keyframes gradientShift {
+    0% {
+      background-position: 0% 50%;
+    }
+    50% {
+      background-position: 100% 50%;
+    }
+    100% {
+      background-position: 0% 50%;
+    }
+  }
+
+  /* button action- view pdf cv */
+
+   /* Estilo para el overlay que contiene el PDF */
+   #pdf-overlay {
+    display: none; /* Ocultamos el overlay inicialmente */
+    position: fixed; /* Fijo sobre la página */
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.7); /* Fondo oscuro semi-transparente */
+    z-index: 9999; /* Se asegura de que el overlay esté por encima de todo */
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Contenedor del PDF */
+  #pdf-container {
+    width: 80%;
+    height: 80%;
+    background: white;
+    overflow: hidden;
+    border-radius: 8px;
+    padding: 10px;
+  }
+
+  /* Botón para cerrar el PDF */
+  #close-pdf {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #ff4d4d;
+    color: white;
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    border-radius: 5px;
+  }
+
+  /*Carousel animation*/
+    /* Contenedor del carrusel */
+    .carousel-container {
+        width: 100%; /* Ancho completo */
+        overflow: hidden; /* Esconde las imágenes fuera del contenedor */
+        position: relative;
+      }
+  
+      /* Carrusel de imágenes */
+      .carousel {
+        display: flex; /* Las imágenes se colocan una al lado de la otra */
+        animation: slide 28s linear infinite; /* Animación para mover las imágenes */
+      }
+  
+      /* Cada imagen en el carrusel */
+      .carousel img {
+        padding: 0 90px;
+       
+        border-radius: 50%;
+        width: 25%; /* Cada imagen ocupa el 25% del contenedor (4 imágenes visibles) */
+        height: auto; /* Mantiene la proporción de la imagen */
+        flex-shrink: 0; /* Evita que las imágenes se compriman */
+      }
+  
+      /* Animación de deslizamiento */
+      @keyframes slide {
+        0% {
+          transform: translateX(0); /* Empieza desde la posición inicial */
+        }
+        12.5% {
+          transform: translateX(-25%); /* Primer desplazamiento */
+        }
+        25% {
+          transform: translateX(-50%); /* Segundo desplazamiento */
+        }
+        37.5% {
+          transform: translateX(-75%); /* Tercer desplazamiento */
+        }
+        50% {
+          transform: translateX(-100%); /* Cuarto desplazamiento */
+        }
+        62.5% {
+          transform: translateX(-125%); /* Quinto desplazamiento */
+        }
+        75% {
+          transform: translateX(-150%); /* Sexto desplazamiento */
+        }
+        87.5% {
+          transform: translateX(-175%); /* Séptimo desplazamiento */
+        }
+        100% {
+          transform: translateX(-200%); /* Vuelve a la posición inicial (bucle) */
+        }
+      }
+  

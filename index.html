@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./src/css/styles.css" />
+    <script defer src="./src/js/functions.js"></script>
+    <script src="./src/js/particles.js" defer></script>
+
+    <title>Manuel Torres - Dev</title>
+  </head>
+  <body>
+    <!-- menu de navegacion -->
+    <header>
+      <nav class="nav d-flex">
+        <a href="/">MANUEL _DEV</a>
+        <div class="nav-main">
+          <a id="about" href="#">Sobre Mi</a>
+          <a id="contact" href="#">Contacto</a>
+          <a id="projects" href="#">Proyectos</a>
+        </div>
+      </nav>
+    </header>
+    <!-- contenido-principal -->
+    <main>
+      <!-- section-1 -->
+      <section class="card-container-1 d-flex">
+        <figure class="avatar d-flex center-x-y">
+          <img id="profile-img" src="./src/media/img/profile.png" alt="" />
+        </figure>
+        <section
+          id="section-principal"
+          class="section-container-1 center-x-y d-flex"
+        >
+          <h1 id="heading" class="cursor"><span id="text"></span></h1>
+          <p>
+            <span>Que tal!, Mi nombre es Juan Manuel Torres,</span> Me apasiona
+            la tecnología web porque tiene el poder de transformar ideas en
+            soluciones digitales eficientes y accesibles.
+          </p>
+          <p>
+            Me encanta crear proyectos que no solo sean funcionales, sino que
+            también mejoren la experiencia de quienes los usan. Siempre estoy
+            buscando nuevas formas de innovar y llevar mis proyectos al
+            siguiente nivel.
+          </p>
+
+          <div id="section-button">
+            <a href="#" class="cv-button" id="show-pdf"> Ver CV </a>
+          </div>
+          <!-- Contenedor donde se mostrará el PDF -->
+          <!-- Overlay para mostrar el PDF -->
+          <div id="pdf-overlay">
+            <div id="pdf-container">
+              <button id="close-pdf">Cerrar</button>
+              <!-- PDF embebido en un iframe -->
+              <iframe
+                src="./src/media/doc/cv _jmts-1.pdf"
+                width="100%"
+                height="100%"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </section>
+      <!-- section-2 -->
+      <section class="card-container-2 d-flex">
+        <!-- Contenedor principal del carrusel -->
+        <div class="carousel-container">
+          <!-- Carrusel con 7 imágenes -->
+          <div class="carousel">
+            <img src="./src/media/img/stack-tech-1.webp" alt="Imagen 1" />
+            <img src="./src/media/img/stack-tech-2.webp" alt="Imagen 2" />
+            <img src="./src/media/img/stack-tech-3.webp" alt="Imagen 3" />
+            <img src="./src/media/img/stack-tech-4.webp" alt="Imagen 4" />
+            <img src="./src/media/img/stack-tech-5.webp" alt="Imagen 5" />
+            <img src="./src/media/img/stack-tech-6.webp" alt="Imagen 6" />
+            <img src="./src/media/img/stack-tech-7.webp" alt="Imagen 7" />
+            <img src="./src/media/img/stack-tech-8.webp" alt="Imagen 8" />
+            <img src="./src/media/img/stack-tech-9.webp" alt="Imagen 9" />
+            <img src="./src/media/img/stack-tech-10.webp" alt="Imagen 10" />
+            <!-- Duplicado de las imágenes para lograr el bucle continuo -->
+            <img src="./src/media/img/stack-tech-1.webp" alt="Imagen 1" />
+            <img src="./src/media/img/stack-tech-2.webp" alt="Imagen 2" />
+            <img src="./src/media/img/stack-tech-3.webp" alt="Imagen 3" />
+            <img src="./src/media/img/stack-tech-4.webp" alt="Imagen 4" />
+            <img src="./src/media/img/stack-tech-5.webp" alt="Imagen 5" />
+            <img src="./src/media/img/stack-tech-6.webp" alt="Imagen 6" />
+            <img src="./src/media/img/stack-tech-7.webp" alt="Imagen 7" />
+            <img src="./src/media/img/stack-tech-8.webp" alt="Imagen 8" />
+            <img src="./src/media/img/stack-tech-9.webp" alt="Imagen 9" />
+            <img src="./src/media/img/stack-tech-10.webp" alt="Imagen 10" />
+          </div>
+        </div>
+      </section>
+      <!-- section-3 -->
+      <section class="card-container-3 d-flex">
+        <figure class="avatar d-flex center-x-y">
+          <img id="profile-img" src="./src/media/img/profile.png" alt="" />
+        </figure>
+        <section
+          id="section-principal"
+          class="section-container-3 center-x-y d-flex"
+        >
+          <h1 id="heading" class="cursor"><span id="text"></span></h1>
+          <p>
+            <span>Que tal!, Mi nombre es Juan Manuel Torres,</span> Me apasiona
+            la tecnología web porque tiene el poder de transformar ideas en
+            soluciones digitales eficientes y accesibles.
+          </p>
+          <p>
+            Me encanta crear proyectos que no solo sean funcionales, sino que
+            también mejoren la experiencia de quienes los usan. Siempre estoy
+            buscando nuevas formas de innovar y llevar mis proyectos al
+            siguiente nivel.
+          </p>
+
+          <div id="section-button">
+            <a href="#" class="cv-button" id="show-pdf"> Ver CV </a>
+          </div>
+          <!-- Contenedor donde se mostrará el PDF -->
+          <!-- Overlay para mostrar el PDF -->
+          <div id="pdf-overlay">
+            <div id="pdf-container">
+              <button id="close-pdf">Cerrar</button>
+              <!-- PDF embebido en un iframe -->
+              <iframe
+                src="./src/media/doc/cv _jmts-1.pdf"
+                width="100%"
+                height="100%"
+              ></iframe>
+            </div>
+          </div>
+        </section>
+      </section>
+    </main>
+
+    <!-- pie de pagina o menu de nav secundario -->
+    <footer class="footer d-flex">
+      <div>©2025 Copyright</div>
+      <div><a href="/">MANUEL _DEV</a></div>
+    </footer>
+
+    <!-- particles-bg -->
+    <div id="particles-js"></div>
+  </body>
+</html>
