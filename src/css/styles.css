@@ -14,6 +14,10 @@
   --color-obscuro-terciario: #1C82AD;
   --color-enfasis: #03c988;
   --color-claro-w:#FFF;
+  --font-size-titulos-primarios:25px;
+  --font-size-titulos-secundarios:30px;
+  --font-size-parrafos:18px;
+
 }
 .d-flex {
   display: flex;
@@ -40,8 +44,15 @@ nav {
   margin-right: var(--margin-global-l-r);
   height: 15vh;
 }
+.home-a{
+  font-size: var(--font-size-titulos-primarios);
+}
 nav a, h1{
 color: var(--color-enfasis);
+
+}
+h1{
+  font-size: var(--font-size-titulos-secundarios);
 }
   /* Mantener el espacio en blanco dentro del h1 */
   h1 span {
@@ -68,30 +79,60 @@ a {
     margin-left: var(--margin-global-l-r);
     margin-right: var(--margin-global-l-r);
   }
-.card-container-2 {
+.card-container-2, .card-container-4 {
     margin-top: 5vh;
     margin-bottom: 10vh;
     margin-left: var(--margin-global-l-r);
     margin-right: var(--margin-global-l-r);
   }
 /*Avatar contenedor 1, 2*/
+
 .avatar {
   margin-left: 20px;
 }
 .avatar img {
   padding: 0 20px;
-  width: 200px;
+  width: 50vh;
+  border-radius: 50%;
 }
-/* section container-1 distribucion y espacios de contenido*/
+/*Avatar contenedor 3*/
+.card-container-3 .avatar {
+  margin-left: 0px;
+  margin-right: 20px;
+}
+.card-container-3 .avatar img {
+  padding: 10px 20px 0;
+  width: 20vh;
+  border-radius: 50%;
+  transition: transform 0.3s ease;
+}
+.card-container-3 .avatar img:hover {
+  padding: 10px 20px 0;
+  transform: scale(1.1); ;
+  border-radius: 50%;
+}
+.card-container-3 .avatar-animado-img img {
+  display: block;
+  padding: 0 20px;
+  width: 70vh;
+  border-radius: 50%;
+}
+/* section container distribucion y espacios de contenido*/
 .section-container-1 {
   flex-direction: column;
 }
 .section-container-1 p{
     padding: 20px 0 0 20px;
     color: var(--color-claro-w);
+    font-size: var(--font-size-parrafos);
 }
 .section-container-1 p span{
     color: var(--color-enfasis);
+}
+
+.section-container-3 {
+  flex-direction: column;
+  padding: 20px 0 0 20px;
 }
 
 /* footer-pie de pagina */
@@ -105,8 +146,10 @@ footer {
 footer,
 footer a,
 .nav-main a {
-  color: var(--color-obscuro-secundario);
-  background-color: var(--color-enfasis);
+  color: var(--color-obscuro-principal);
+  background-color: var(--color-claro-w);
+  /* color: var(--color-obscuro-secundario);
+  background-color: var(--color-enfasis); */
 }
 
 /*Animaciones css*/
@@ -263,10 +306,10 @@ footer a,
   
       /* Cada imagen en el carrusel */
       .carousel img {
-        padding: 0 90px;
+        padding: 0 13.5vh;
        
         border-radius: 50%;
-        width: 25%; /* Cada imagen ocupa el 25% del contenedor (4 imágenes visibles) */
+        width: 20%; /* Cada imagen ocupa el 25% del contenedor (4 imágenes visibles) */
         height: auto; /* Mantiene la proporción de la imagen */
         flex-shrink: 0; /* Evita que las imágenes se compriman */
       }
