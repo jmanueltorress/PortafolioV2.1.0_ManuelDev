@@ -150,7 +150,7 @@
 
         <!-- form-contacto -->
         <section class="card-container-4">
-          <form class="max-w-md mx-auto"  action="https://formspree.io/f/xldgnrlg" method="POST">
+          <form id="formContact" class="max-w-md mx-auto"  action="https://formspree.io/f/xldgnrlg" method="POST">
             <div class="relative z-0 w-full mb-5 group">
               <input
                 type="email"
@@ -252,6 +252,10 @@
               Enviar
             </button>
           </form>
+          <!-- message after click on send -->
+          <div id="thankYouMessage" style="display:none;">
+            <p>Gracias, en breve nos contactaremos contigo.</p>
+          </div>
         </section>
       </section>
 

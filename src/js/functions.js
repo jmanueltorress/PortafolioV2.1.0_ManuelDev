@@ -56,3 +56,25 @@ closePdfButton.addEventListener('click', function() {
   pdfOverlay.style.display = 'none';  // Ocultar el overlay
 });
 
+// funcion para mostrar mensaje en pantalla una vez enviado el form de contacto
+const form = document.getElementById('formContact');
+const thankYouMessage = document.getElementById('thankYouMessage');
+
+form.addEventListener('submit', function(event) {
+  event.preventDefault(); // Evita el envío inmediato
+  fetch(form.action, {
+    method: 'POST',
+    body: new FormData(form),
+  })
+  .then(response => {
+    if (response.ok) {
+      form.style.display = 'none'; // Oculta el formulario
+      thankYouMessage.style.display = 'block'; // Muestra el mensaje de agradecimiento
+    } else {
+      alert('Hubo un error. Intenta nuevamente.');
+    }
+  })
+  .catch(error => {
+    alert('Hubo un error. Intenta nuevamente.');
+  });
+});
