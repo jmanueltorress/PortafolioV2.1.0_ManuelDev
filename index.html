@@ -9,22 +9,22 @@
 
     <title>Manuel Torres - Dev</title>
   </head>
-  <body>
+  <body translate="no">
     <!-- menu de navegacion -->
-    <header>
-      <nav class="nav d-flex">
+    <header class="header" >
+      <nav class=" nav d-flex">
         <a class="home-a" href="/">MANUEL _DEV</a>
         <div class="nav-main">
-          <a id="about" href="#">Sobre Mi</a>
-          <a id="contact" href="#">Contacto</a>
-          <a id="projects" href="#">Proyectos</a>
+          <a id="acerca" href="#about">Sobre Mi</a>
+          <a id="contacto" href="#contact">Contacto</a>
+          <a id="proyectos" href="#projects">Proyectos</a>
         </div>
       </nav>
     </header>
     <!-- contenido-principal -->
     <main>
       <!-- section-1 -->
-      <section class="card-container-1 d-flex">
+      <section id="about" class="card-container-1 d-flex">
         <figure class="avatar d-flex center-x-y">
           <img id="profile-img" src="./src/media/img/profile.png" alt="" />
         </figure>
@@ -94,7 +94,8 @@
         </div>
       </section>
       <!-- section-3 -->
-      <section class="card-container-3 d-flex">
+       
+      <section id="contact" class="card-container-3 d-flex">
         <section id="section-principal" class="section-container-3 center-x-y d-flex">
           <figure class="avatar d-flex center-x-y">
             <a target="_blank" href="https://www.linkedin.com/in/juanmanuel-ts/"><img id="profile-img" src="./src/media/img/redes/linkedin-logo.webp" alt="linkedin" /></a>
@@ -115,15 +116,15 @@
           
       
         </section>
-        <figure class="avatar-3 d-flex center-x-y avatar-animado-img">
-          <img id="avatar-animado-img" src="./src/media/img/avatar-animado.png" alt="" />
-        </figure>
+        <!-- <figure class="avatar-3 d-flex center-x-y avatar-animado-img">
+          <img id="avatar-animado-img" src="./src/media/img/redes/mention-concept-illustration/Mention.jpg" alt="" />
+        </figure> -->
 
         <p>Contactame Form</p>
         
       </section>
 
-      <section class="card-container-4 d-flex"><p>proyectos</p></section>
+      <section id="projects" class="card-container-4 d-flex"><p>proyectos</p></section>
     </main>
 
     <!-- pie de pagina o menu de nav secundario -->

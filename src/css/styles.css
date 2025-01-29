@@ -33,6 +33,9 @@
   padding: 0;
   box-sizing: border-box; /* Asegura que los márgenes y paddings no afecten el tamaño total de los elementos */
 }
+html {
+  scroll-behavior: smooth;
+}
 body {
   background-color: var(--color-obscuro-principal);
 }
@@ -43,7 +46,16 @@ nav {
   margin-left: var(--margin-global-l-r);
   margin-right: var(--margin-global-l-r);
   height: 15vh;
+ 
+  position: relative;
+  top: 0; /* Lo coloca en la parte superior de la pantalla */
+  
 }
+header{
+  background-color: var(--color-obscuro-principal);
+}
+/* Estilo para el nav cuando se hace fijo al hacer scroll */
+
 .home-a{
   font-size: var(--font-size-titulos-primarios);
 }
@@ -70,6 +82,10 @@ a {
   background-color: var(--color-obscuro-secundario);
   height: 70vh;
   justify-content: space-between;
+}
+.card-container-1, .card-container-3 {
+  background-color: var(--color-obscuro-secundario);
+  
 }
 .card-container-2, .card-container-4 {
     background-color: var(--color-obscuro-principal);
@@ -101,20 +117,20 @@ a {
   margin-right: 20px;
 }
 .card-container-3 .avatar img {
-  padding: 10px 20px 0;
+  padding: 20px 35px 0;
   width: 20vh;
   border-radius: 50%;
   transition: transform 0.3s ease;
 }
 .card-container-3 .avatar img:hover {
-  padding: 10px 20px 0;
+  
   transform: scale(1.1); ;
-  border-radius: 50%;
+  
 }
 .card-container-3 .avatar-animado-img img {
   display: block;
   padding: 0 20px;
-  width: 70vh;
+  width: 50vh;
   border-radius: 50%;
 }
 /* section container distribucion y espacios de contenido*/

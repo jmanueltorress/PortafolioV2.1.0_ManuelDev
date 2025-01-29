@@ -55,3 +55,4 @@ showPdfLink.addEventListener('click', function(event) {
 closePdfButton.addEventListener('click', function() {
   pdfOverlay.style.display = 'none';  // Ocultar el overlay
 });
+
