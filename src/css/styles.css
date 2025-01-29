@@ -8,11 +8,13 @@
 }
 
 :root {
+  /* 'rgba(0, 105, 255, 0.5)'  calendly default color*/
   --margin-global-l-r: 100px;
   --color-obscuro-principal: #13005a;
   --color-obscuro-secundario: #00337c;
   --color-obscuro-terciario: #1C82AD;
   --color-enfasis: #03c988;
+  --color-enfasis-2: #03c987aa;
   --color-claro-w:#FFF;
   --font-size-titulos-primarios:25px;
   --font-size-titulos-secundarios:30px;
@@ -44,6 +46,19 @@ body {
 /* Estilo para los inputs y el efecto de focus con el color rojo para el texto del label */
 .peer:focus + label {
   color: var(--color-enfasis); 
+}
+/*calendly:*/
+/* Efecto de blur en el fondo */
+.calendly-badge-widget::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5); /* Fondo oscuro para el desenfoque */
+  filter: blur(10px); /* Aplica el desenfoque */
+  z-index: -1; /* Asegura que el blur esté detrás del widget */
 }
 
 /* Opcional: Cambiar el color de los labels en modo oscuro también */
