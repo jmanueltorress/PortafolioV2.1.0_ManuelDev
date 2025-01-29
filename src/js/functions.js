@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function(){
 // Las palabras que cambiarán en el heading
-const words = ["Web Developer", "Jr Frontend", "UX/UI Designer", "TI Engineer"];
+const words = ["Web Developer", "Jr Frontend", "UX/UI Designer", "TI Engineer", "Mentor"];
 let index = 0;
 let currentWord = '';
 let charIndex = 0;
