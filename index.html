@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="icon" href="./src/public/ico/fav.ico" type="image/x-icon">
+    <link rel="icon" href="./src/public/ico/fav.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/styles.css" />
     <script defer src="./src/js/functions.js"></script>
     <script src="./src/js/particles.js" defer></script>
@@ -15,10 +15,26 @@
     <script src="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.js"></script>
 
     <!-- Calendly badge widget begin -->
-<link href="https://assets.calendly.com/assets/external/widget.css" rel="stylesheet">
-<script src="https://assets.calendly.com/assets/external/widget.js" type="text/javascript" async></script>
-<script type="text/javascript">window.onload = function() { Calendly.initBadgeWidget({ url: 'https://calendly.com/tjmanuel354/30min', text: 'Schedule a meeting with me', color: '#03c987aa', textColor: '#ffffff' }); }</script>
-<!-- Calendly badge widget end -->
+    <link
+      href="https://assets.calendly.com/assets/external/widget.css"
+      rel="stylesheet"
+    />
+    <script
+      src="https://assets.calendly.com/assets/external/widget.js"
+      type="text/javascript"
+      async
+    ></script>
+    <script type="text/javascript">
+      window.onload = function () {
+        Calendly.initBadgeWidget({
+          url: "https://calendly.com/tjmanuel354/30min",
+          text: "Schedule a meeting with me",
+          color: "#03c987aa",
+          textColor: "#ffffff",
+        });
+      };
+    </script>
+    <!-- Calendly badge widget end -->
 
     <title>Manuel Torres - Dev</title>
   </head>
@@ -51,8 +67,8 @@
         >
           <h1 id="heading" class="cursor"><span id="text"></span></h1>
           <p>
-            <span>¡Que tal! Mi nombre es Manuel Torres,</span> Me apasiona
-            la tecnología web porque tiene el poder de transformar ideas en
+            <span>¡Que tal! Mi nombre es Manuel Torres,</span> Me apasiona la
+            tecnología web porque tiene el poder de transformar ideas en
             soluciones digitales eficientes y accesibles.
           </p>
           <p>
@@ -141,7 +157,6 @@
                 alt="x-twiter"
             /></a>
           </figure>
-          
         </section>
 
         <!-- <figure class="avatar-3 d-flex center-x-y avatar-animado-img">
@@ -150,11 +165,16 @@
 
         <!-- form-contacto -->
         <section class="card-container-4">
-          <form id="formContact" class="max-w-md mx-auto"  action="https://formspree.io/f/xldgnrlg" method="POST">
+          <form
+            id="form"
+            class="max-w-md mx-auto"
+            action="https://formspree.io/f/xldgnrlg"
+            method="POST"
+          >
             <div class="relative z-0 w-full mb-5 group">
               <input
                 type="email"
-                name="floating_email"
+                name="email"
                 id="floating_email"
                 class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                 placeholder=" "
@@ -171,7 +191,7 @@
               <div class="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
-                  name="floating_first_name"
+                  name="id_nombre"
                   id="floating_first_name"
                   class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -186,7 +206,7 @@
               <div class="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
-                  name="floating_last_name"
+                  name="id_apellido"
                   id="floating_last_name"
                   class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -204,7 +224,7 @@
                 <input
                   type="tel"
                   pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-                  name="floating_phone"
+                  name="contact_phone"
                   id="floating_phone"
                   class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -219,7 +239,7 @@
               <div class="relative z-0 w-full mb-5 group">
                 <input
                   type="text"
-                  name="floating_company"
+                  name="name_company"
                   id="floating_company"
                   class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
                   placeholder=" "
@@ -240,6 +260,7 @@
               >
               <textarea
                 id="message"
+                name="Mensaje"
                 rows="4"
                 class="block p-2.5 w-full text-sm text-gray-900 bg-gray-50 rounded-lg border border-gray-300 focus:ring-blue-500 focus:border-blue-500 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
                 placeholder="Escriba su mensaje..."
@@ -252,12 +273,35 @@
               Enviar
             </button>
           </form>
-          
+          <!-- Popup de agradecimiento (inicialmente oculto) -->
+          <div id="thankYouPopup" style="display: none">
+            <div
+              style="
+                background: rgba(0, 0, 0, 0.7);
+                position: fixed;
+                top: 0;
+                left: 0;
+                right: 0;
+                bottom: 0;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+              "
+            >
+              <div
+                style="
+                  background: white;
+                  padding: 30px;
+                  border-radius: 8px;
+                  text-align: center;
+                "
+              >
+                <p>Gracias, en breve nos contactaremos contigo.</p>
+                <button onclick="closePopup()">Cerrar</button>
+              </div>
+            </div>
+          </div>
         </section>
-        <!-- message after click on send -->
-        <div id="thankYouMessage" style="display:none;">
-          <p>Gracias, en breve nos contactaremos contigo.</p>
-        </div>
       </section>
 
       <section id="projects" class="card-container-4 d-flex">

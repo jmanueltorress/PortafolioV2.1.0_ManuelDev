@@ -57,24 +57,37 @@ closePdfButton.addEventListener('click', function() {
 });
 
 // funcion para mostrar mensaje en pantalla una vez enviado el form de contacto
-const form = document.getElementById('formContact');
-const thankYouMessage = document.getElementById('thankYouMessage');
 
-form.addEventListener('submit', function(event) {
-  event.preventDefault(); // Evita el envío inmediato
-  fetch(form.action, {
-    method: 'POST',
-    body: new FormData(form),
-  })
-  .then(response => {
+const $form = document.querySelector('#form');
+
+// Función que maneja el envío del formulario
+async function handleSubmit(event) {
+  event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
+
+  const form = new FormData($form);  // Crear un nuevo objeto FormData a partir del formulario
+  try {
+    const response = await fetch($form.action, {
+      method: $form.method,  // Usar el método del formulario (POST)
+      body: form,            // El cuerpo será el objeto FormData
+      headers: {
+        'Accept': 'application/json',  // Aceptar respuesta en formato JSON
+      },
+    });
+
     if (response.ok) {
-      form.style.display = 'none'; // Oculta el formulario
-      thankYouMessage.style.display = 'block'; // Muestra el mensaje de agradecimiento
+      // Si la respuesta es exitosa, limpiamos el formulario y mostramos el mensaje
+      $form.reset();
+      alert('Gracias por tu mensaje. En breve me pondré en contacto contigo.');
     } else {
-      alert('Hubo un error. Intenta nuevamente.');
+      // Si hay un error en la respuesta
+      alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
     }
-  })
-  .catch(error => {
-    alert('Hubo un error. Intenta nuevamente.');
-  });
-});
+  } catch (error) {
+    console.error('Error al enviar el formulario:', error);
+    alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
+  }
+}
+
+// Añadir el event listener para el envío del formulario
+$form.addEventListener('submit', handleSubmit);
+
