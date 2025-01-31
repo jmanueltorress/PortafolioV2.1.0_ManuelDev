@@ -94,13 +94,19 @@ $form.addEventListener('submit', handleSubmit);
 
 /*Funcion que invoca api recaptcha v3*/
 
-function onSubmit(token) {
-  document.getElementById("form").submit();
-}
+// Al enviar el formulario, obtenemos el token de reCAPTCHA
+document.getElementById('form').addEventListener('submit', function(event) {
+  event.preventDefault(); // Evitar el envío del formulario hasta que obtenemos el token
 
-function onClick(e) {
-  e.preventDefault();
-  grecaptcha.enterprise.ready(async () => {
-    const token = await grecaptcha.enterprise.execute('6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA', {action: 'LOGIN'});
+  grecaptcha.execute('6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA', { action: 'submit' }).then(function(token) {
+    // Aquí agregamos el token generado por reCAPTCHA a un campo oculto en el formulario
+    var input = document.createElement('input');
+    input.type = 'hidden';
+    input.name = 'recaptcha_token';
+    input.value = token;
+    document.getElementById('form').appendChild(input);
+    
+    // Ahora enviamos el formulario
+    document.getElementById('form').submit();
   });
-}
+});
