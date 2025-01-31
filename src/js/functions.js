@@ -97,3 +97,10 @@ $form.addEventListener('submit', handleSubmit);
 function onSubmit(token) {
   document.getElementById("form").submit();
 }
+
+function onClick(e) {
+  e.preventDefault();
+  grecaptcha.enterprise.ready(async () => {
+    const token = await grecaptcha.enterprise.execute('6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA', {action: 'LOGIN'});
+  });
+}
