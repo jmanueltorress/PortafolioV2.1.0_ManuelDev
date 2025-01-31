@@ -91,3 +91,9 @@ async function handleSubmit(event) {
 // Añadir el event listener para el envío del formulario
 $form.addEventListener('submit', handleSubmit);
 
+
+/*Funcion que invoca api recaptcha v3*/
+
+function onSubmit(token) {
+  document.getElementById("form").submit();
+}
