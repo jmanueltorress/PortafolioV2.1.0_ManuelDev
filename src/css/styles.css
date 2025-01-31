@@ -62,14 +62,12 @@ body {
 }
 
 /*Recaptcha v3*/
-/* Mueve el icono flotante de reCAPTCHA v3 a la izquierda */
-.grecaptcha-badge {
-  left: 0 !important;
-  right: auto !important;
-  
-  transform: none !important;
-  z-index: 99999;  /* Para asegurarte de que esté encima de otros elementos */
-}
+/* Mueve el icono flotante de reCAPTCHA v3 hacia arriba */
+.grecaptcha-badge {  
+  bottom: 60px !important;     /* Mueve el badge hacia arriba (ajusta este valor según sea necesario) */
+  /* right: 10px !important; */
+} 
+
 
 /*Form- Opcional: Cambiar el color de los labels en modo oscuro también */
 @media (prefers-color-scheme: dark) {
