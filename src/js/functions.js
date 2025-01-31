@@ -56,16 +56,24 @@ closePdfButton.addEventListener('click', function() {
   pdfOverlay.style.display = 'none';  // Ocultar el overlay
 });
 
-// funcion para mostrar mensaje en pantalla una vez enviado el form de contacto
-
+// Manejo de formulario recaptcha v3 y popup de confirmacion de envio
 const $form = document.querySelector('#form');
 
 // Función que maneja el envío del formulario
 async function handleSubmit(event) {
   event.preventDefault();  // Prevenir el comportamiento por defecto del formulario
 
-  const form = new FormData($form);  // Crear un nuevo objeto FormData a partir del formulario
+  // Obtener el token de reCAPTCHA v3
   try {
+    const token = await grecaptcha.execute('6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA', { action: 'submit' });
+
+    // Crear un nuevo objeto FormData a partir del formulario
+    const form = new FormData($form);
+
+    // Agregar el token de reCAPTCHA al formulario
+    form.append('recaptcha_token', token);
+
+    // Enviar los datos del formulario
     const response = await fetch($form.action, {
       method: $form.method,  // Usar el método del formulario (POST)
       body: form,            // El cuerpo será el objeto FormData
@@ -77,7 +85,7 @@ async function handleSubmit(event) {
     if (response.ok) {
       // Si la respuesta es exitosa, limpiamos el formulario y mostramos el mensaje
       $form.reset();
-      alert('Gracias por tu mensaje. En breve me pondré en contacto contigo.');
+      alert('Gracias por tu mensaje. En breve me pondré en contactoo contigo.');
     } else {
       // Si hay un error en la respuesta
       alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');
@@ -90,23 +98,3 @@ async function handleSubmit(event) {
 
 // Añadir el event listener para el envío del formulario
 $form.addEventListener('submit', handleSubmit);
-
-
-/*Funcion que invoca api recaptcha v3*/
-
-// Al enviar el formulario, obtenemos el token de reCAPTCHA
-document.getElementById('form').addEventListener('submit', function(event) {
-  event.preventDefault(); // Evitar el envío del formulario hasta que obtenemos el token
-
-  grecaptcha.execute('6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA', { action: 'submit' }).then(function(token) {
-    // Aquí agregamos el token generado por reCAPTCHA a un campo oculto en el formulario
-    var input = document.createElement('input');
-    input.type = 'hidden';
-    input.name = 'recaptcha_token';
-    input.value = token;
-    document.getElementById('form').appendChild(input);
-    
-    // Ahora enviamos el formulario
-    document.getElementById('form').submit();
-  });
-});

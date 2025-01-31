@@ -62,11 +62,7 @@ body {
 }
 
 /*Recaptcha v3*/
-/* Mueve el icono flotante de reCAPTCHA v3 a la izquierda */
-.grecaptcha-badge {
-  left: 10px !important;  /* Ajusta el valor según necesites */
-  right: unset !important; /* Desactiva la posición por defecto a la derecha */
-}
+
 /*Form- Opcional: Cambiar el color de los labels en modo oscuro también */
 @media (prefers-color-scheme: dark) {
 .peer:focus + label {
