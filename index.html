@@ -5,6 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./src/public/ico/fav.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/styles.css" />
+    <link rel="stylesheet" href="./src/css/mediaqueries.css">
+
     <script defer src="./src/js/functions.js"></script>
     <script src="./src/js/particles.js" defer></script>
     <!-- flowbite -->
@@ -44,7 +46,11 @@
     <!-- menu de navegacion -->
     <header class="header">
       <nav class="nav d-flex">
-        <a class="home-a" href="./index.html">MANUEL _DEV</a>
+        <a class="home-a" href="./index.html">
+          <figure>
+            <img width="70px" src="./src/media/img/logo_manueldev-r.png" alt="logoweb">
+          </figure>
+        </a>
         <div class="nav-main">
           <a id="acerca" href="#about">Sobre Mi</a>
           <a id="contacto" href="#contact">Contacto</a>
@@ -59,7 +65,7 @@
         <figure class="avatar d-flex center-x-y">
           <img
             id="profile-img"
-            src="./src/media/img/avatar-animado2.png"
+            src="./src/media/img/profile.png"
             alt=""
           />
         </figure>
@@ -131,33 +137,13 @@
       <!-- section-3 -->
 
       <section id="contact" class="card-container-3 d-flex">
-        <section
-          id="section-principal"
-          class="section-container-3 center-x-y d-flex"
-        >
+        <section id="section-principal" class="section-container-3 center-x-y d-flex" >
           <figure class="avatar d-flex center-x-y">
-            <a target="_blank" href="https://www.linkedin.com/in/juanmanuel-ts/"
-              ><img
-                id="profile-img"
-                src="./src/media/img/redes/linkedin-logo.webp"
-                alt="linkedin"
-            /></a>
-          </figure>
-          <figure class="avatar d-flex center-x-y">
-            <a target="_blank" href="https://github.com/jmanueltorress"
-              ><img
-                id="profile-img"
-                src="./src/media/img/redes/ghub.webp"
-                alt="github-jmanueltorress"
-            /></a>
-          </figure>
-          <figure class="avatar d-flex center-x-y">
-            <a href="#">
-              <img
-                id="profile-img"
-                src="./src/media/img/redes/X_tw.webp"
-                alt="x-twiter"
-            /></a>
+            <img
+              id="contact-img"
+              src="./src/media/img/contact.png"
+              alt=""
+            />
           </figure>
         </section>
 
@@ -278,34 +264,7 @@
               Enviar
             </button>
           </form>
-          <!-- Popup de agradecimiento (inicialmente oculto) -->
-          <div id="thankYouPopup" style="display: none">
-            <div
-              style="
-                background: rgba(0, 0, 0, 0.7);
-                position: fixed;
-                top: 0;
-                left: 0;
-                right: 0;
-                bottom: 0;
-                display: flex;
-                justify-content: center;
-                align-items: center;
-              "
-            >
-              <div
-                style="
-                  background: white;
-                  padding: 30px;
-                  border-radius: 8px;
-                  text-align: center;
-                "
-              >
-                <p>Gracias, en breve nos contactaremos contigo.</p>
-                <button onclick="closePopup()">Cerrar</button>
-              </div>
-            </div>
-          </div>
+          
         </section>
       </section>
 

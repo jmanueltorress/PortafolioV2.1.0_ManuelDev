@@ -10,9 +10,12 @@
 :root {
   /* 'rgba(0, 105, 255, 0.5)'  calendly default color*/
   --margin-global-l-r: 100px;
-  --color-obscuro-principal: #13005a;
+  /* --color-obscuro-principal: #13005a;
   --color-obscuro-secundario: #00337c;
-  --color-obscuro-terciario: #1C82AD;
+  --color-obscuro-terciario: #1C82AD; */
+  --color-obscuro-principal: #000;
+  --color-obscuro-secundario: #000;
+  --color-obscuro-terciario: #000000;
   --color-enfasis: #03c988;
   --color-enfasis-2: #03c987aa;
   --color-claro-w:#FFF;
@@ -40,6 +43,7 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  margin-top: 50px;
   background-color: var(--color-obscuro-principal);
 }
 /*peer focus - formulario*/
@@ -77,25 +81,35 @@ body {
 }
 /* menu-navegación */
 nav {
+  display: flex;
   justify-content: space-between;
-  padding-top: 5vh;
+  align-items: center;
+  padding: 3vh 0; /* Espacio top/bottom */
   margin-left: var(--margin-global-l-r);
   margin-right: var(--margin-global-l-r);
-  height: 15vh;
- 
-  position: relative;
-  top: 0; /* Lo coloca en la parte superior de la pantalla */
-  
+  position: fixed;
+  top: 0;
+  width: calc(100% - 2 * var(--margin-global-l-r)); /* Ajusta el ancho con los márgenes */
+  z-index: 10;
+  background-color: transparent;
+  backdrop-filter: blur(10px); /* Aplica el efecto de desenfoque solo al nav */
 }
-header{
-  background-color: var(--color-obscuro-principal);
+
+header {
+  background-color: transparent;
+  z-index: 5; 
+  /* Aquí no agregar el backdrop-filter */
 }
+
 /* Estilo para el nav cuando se hace fijo al hacer scroll */
 
 .home-a{
   font-size: var(--font-size-titulos-primarios);
 }
-nav a, h1{
+nav a{
+  color:var(--color-claro-w);
+} 
+h1{
 color: var(--color-enfasis);
 
 }
@@ -123,7 +137,7 @@ a {
   justify-content: space-between;
 }
 .card-container-3{
-  justify-content: space-evenly;
+  justify-content: space-around;
 }
 .card-container-1, .card-container-3 {
   background-color: var(--color-obscuro-secundario);
@@ -153,8 +167,9 @@ a {
 }
 .avatar img {
   padding: 0 20px;
-  width: 100vh;
+  width: 400px;
   border-radius: 50%;
+  
 }
 /*Avatar contenedor 3*/
 .card-container-3 .avatar {
@@ -163,15 +178,15 @@ a {
 }
 .card-container-3 .avatar img {
   padding: 20px 35px 0;
-  width: 20vh;
-  border-radius: 50%;
+  width: 600px;
+  border-radius: 0;
   transition: transform 0.3s ease;
 }
-.card-container-3 .avatar img:hover {
+/* .card-container-3 .avatar img:hover {
   
   transform: scale(1.1); ;
   
-}
+} */
 .card-container-3 .avatar-animado-img img {
   display: block;
   padding: 0 20px;
@@ -207,8 +222,8 @@ footer {
 footer,
 footer a,
 .nav-main a {
-  color: var(--color-obscuro-principal);
-  background-color: var(--color-claro-w);
+  color: var(--color-claro-w);
+  background-color:transparent;
   /* color: var(--color-obscuro-secundario);
   background-color: var(--color-enfasis); */
 }
@@ -245,7 +260,7 @@ footer a,
         border: 1px solid rgba(255, 255, 255, 0.4);
         border-radius: 5px;
         box-shadow: 0 0 10px rgba(255, 255, 255, 0.8),
-        0 0 20px rgba(106, 90, 205, 0.5);
+        0 0 20px #fff;
         transition: all 0.3s ease;
         position: relative;
         overflow: hidden;
@@ -296,8 +311,8 @@ footer a,
         -webkit-transform: scale(0.98) translateY(2px);
         
         transform: scale(0.98) translateY(2px);
-        background: linear-gradient(45deg, #6a5acd, #836fff);
-        box-shadow: 0 0 8px rgba(106, 90, 205, 0.5), 0 0 15px rgba(106, 90, 205, 0.4);
+        background: linear-gradient(45deg, var(--color-obscuro-secundario), var(--color-claro-w));
+        box-shadow: 0 0 8px var(--color-claro-w), 0 0 15px var(--color-enfasis);
     }
     
     @keyframes gradientShift {
@@ -367,10 +382,10 @@ footer a,
   
       /* Cada imagen en el carrusel */
       .carousel img {
-        padding: 0 13.5vh;
+        padding: 0 70px;
        
         border-radius: 50%;
-        width: 20%; /* Cada imagen ocupa el 25% del contenedor (4 imágenes visibles) */
+        width: 200px; /* Cada imagen ocupa 200px */
         height: auto; /* Mantiene la proporción de la imagen */
         flex-shrink: 0; /* Evita que las imágenes se compriman */
       }

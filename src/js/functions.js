@@ -85,7 +85,7 @@ async function handleSubmit(event) {
     if (response.ok) {
       // Si la respuesta es exitosa, limpiamos el formulario y mostramos el mensaje
       $form.reset();
-      alert('Gracias por tu mensaje. En breve me pondré en contactoo contigo.');
+      alert('Gracias por tu mensaje. En breve me pondré en contacto contigo.');
     } else {
       // Si hay un error en la respuesta
       alert('Hubo un error al enviar el formulario. Por favor intenta nuevamente.');

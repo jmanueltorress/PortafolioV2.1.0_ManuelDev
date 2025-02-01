@@ -1,0 +1,160 @@
+/* Adaptaciones generales para pantallas pequeñas (móviles) */
+@media (max-width: 1024px) { /* Esto incluye tablets en posición vertical y móviles */
+    :root {
+      --margin-global-l-r: 0px; /* Reducir márgenes para pantallas más pequeñas */
+      --font-size-titulos-primarios: 20px;
+      --font-size-titulos-secundarios: 24px;
+      --font-size-parrafos: 16px;
+    }
+  
+    /* Ajustes para el cuerpo */
+    body {
+      background-color: var(--color-obscuro-principal);
+      padding: 0 10px; /* Espaciado adicional para móviles */
+    }
+  
+    /* Hacer que el nav se apile en dispositivos pequeños */
+    nav {
+      padding-top: 3vh;
+      height: auto;
+      
+      flex-direction: column;
+      justify-content: flex-start;
+    }
+  
+    .home-a {
+      font-size: var(--font-size-titulos-primarios);
+    }
+  
+    /* Cambiar tamaño de las fuentes en los títulos */
+    h1 {
+      font-size: var(--font-size-titulos-secundarios);
+    }
+    main{
+        margin-top: 50px;
+    }
+    .section-container-1 p, .section-container-3 p {
+      font-size: var(--font-size-parrafos);
+      padding: 15px;
+    }
+  
+    /* Asegurarnos de que las imágenes se ajusten bien a dispositivos móviles */
+    .avatar img {
+      width: 60vh; /* Asegurar que las imágenes no sean demasiado grandes */
+      height: auto;
+    }
+  
+    /* Ajustar el tamaño de las imágenes del carrusel */
+    .carousel img {
+      width: 35vw; /* Redimensionar las imágenes del carrusel */
+      padding: 0 5vw;
+    }
+  
+    /* Hacer que los botones se vean bien en pantallas pequeñas */
+    .cv-button {
+      padding: 10px 20px;
+      font-size: 1rem;
+      border-radius: 4px;
+    }
+  
+    /* Reducir tamaño de los contenedores de las tarjetas */
+    .card-container-1, .card-container-3 {
+      height: auto;
+      margin-bottom: 5vh;
+    }
+  
+    /* Mejorar el aspecto de los botones en móviles */
+    .cv-button:hover {
+      transform: scale(1.05);
+    }
+  
+    .carousel-container {
+      width: 100%;
+      padding: 0;
+    }
+  
+    /* Ajustes para los contenedores del PDF */
+    #pdf-container {
+      width: 90%;
+      height: 80%;
+    }
+  
+    /* Hacer que los contenedores del footer tengan más espacio en pantallas pequeñas */
+    footer {
+      flex-direction: column;
+      padding: 20px 10px;
+      text-align: center;
+    }
+  
+    /* Ajustar los márgenes de los contenedores de las tarjetas */
+    .card-container-1, .card-container-3 {
+      margin-left: 0;
+      margin-right: 0;
+    }
+    .card-container-3{
+        display: inline;
+      }
+  
+    /* Mejorar la cabecera */
+    header {
+      padding: 10px 0;
+    }
+  }
+  
+  /* Adaptaciones para pantallas aún más pequeñas (móviles muy pequeños) */
+  @media (max-width: 480px) { /* Esto incluye móviles muy pequeños */
+    :root {
+      --margin-global-l-r: 0px;
+      --font-size-titulos-primarios: 18px;
+      --font-size-titulos-secundarios: 22px;
+      --font-size-parrafos: 14px;
+    }
+  
+    /* Ajustes para hacer la navegación más accesible */
+    nav {
+      padding-top: 10px;
+      height: auto;
+      text-align: center;
+    }
+  
+    .home-a {
+      font-size: var(--font-size-titulos-primarios);
+    }
+  
+    /* Asegurar que las imágenes no ocupen demasiado espacio en pequeños tamaños */
+    .avatar img {
+      width: 50vh;
+      height: auto;
+    }
+  
+    /* Ajustar las imágenes del carrusel */
+    .carousel img {
+      width: 45vw; /* Más pequeñas en pantallas muy pequeñas */
+      padding: 0 5vw;
+    }
+  
+    /* Mejorar la accesibilidad de los botones */
+    .cv-button {
+      padding: 8px 16px;
+      font-size: 0.9rem;
+      border-radius: 4px;
+    }
+  
+    /* Ajustar los márgenes de los contenedores */
+    .card-container-1, .card-container-3 {
+      margin-bottom: 5vh;
+      height: auto;
+    }
+    .card-container-3{
+        display: inline;
+      }
+  
+    footer {
+      padding: 15px 0;
+    }
+  
+    .carousel-container {
+      padding: 0;
+    }
+  }
+  
