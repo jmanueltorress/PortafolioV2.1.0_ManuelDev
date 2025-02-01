@@ -220,12 +220,15 @@ footer {
   padding-right: var(--margin-global-l-r);
 }
 footer,
-footer a,
-.nav-main a {
-  /* color: var(--color-claro-w);
-  background-color:transparent; */
+footer a
+{
   color: var(--color-obscuro-secundario);
   background-color: var(--color-claro-w);
+}
+.nav-main a {
+  color: var(--color-claro-w);
+  background-color:transparent;
+  
 }
 
 /*Animaciones css*/
