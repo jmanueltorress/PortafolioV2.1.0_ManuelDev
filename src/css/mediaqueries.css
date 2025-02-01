@@ -41,13 +41,13 @@
   
     /* Asegurarnos de que las imágenes se ajusten bien a dispositivos móviles */
     .avatar img {
-      width: 60vh; /* Asegurar que las imágenes no sean demasiado grandes */
+      width: 30vw; /* Asegurar que las imágenes no sean demasiado grandes */
       height: auto;
     }
   
     /* Ajustar el tamaño de las imágenes del carrusel */
     .carousel img {
-      width: 35vw; /* Redimensionar las imágenes del carrusel */
+      width: 15vw; /* Redimensionar las imágenes del carrusel */
       padding: 0 5vw;
     }
   
@@ -124,7 +124,7 @@
   
     /* Asegurar que las imágenes no ocupen demasiado espacio en pequeños tamaños */
     .avatar img {
-      width: 50vh;
+      width: 20vh;
       height: auto;
     }
   

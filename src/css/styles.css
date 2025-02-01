@@ -222,10 +222,10 @@ footer {
 footer,
 footer a,
 .nav-main a {
-  color: var(--color-claro-w);
-  background-color:transparent;
-  /* color: var(--color-obscuro-secundario);
-  background-color: var(--color-enfasis); */
+  /* color: var(--color-claro-w);
+  background-color:transparent; */
+  color: var(--color-obscuro-secundario);
+  background-color: var(--color-claro-w);
 }
 
 /*Animaciones css*/
