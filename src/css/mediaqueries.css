@@ -130,7 +130,7 @@
   
     /* Ajustar las imágenes del carrusel */
     .carousel img {
-      width: 45vw; /* Más pequeñas en pantallas muy pequeñas */
+      width: 10vw; /* Más pequeñas en pantallas muy pequeñas */
       padding: 0 5vw;
     }
   
