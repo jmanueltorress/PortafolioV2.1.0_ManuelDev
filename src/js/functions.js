@@ -62,12 +62,16 @@ closePdfButton.addEventListener("click", function () {
 // Manejo de formulario recaptcha v3 y popup de confirmacion de envio
 const $form = document.querySelector("#form");
 
-// Función que maneja el envío del formulario
 async function handleSubmit(event) {
   event.preventDefault(); // Prevenir el comportamiento por defecto del formulario
 
-  // Obtener el token de reCAPTCHA v3
+  // Mostrar el loader y deshabilitar el formulario para evitar múltiples envíos
+  const loader = document.getElementById('loader');
+  loader.style.display = 'block'; // Mostrar el loader
+  $form.querySelector('button[type="submit"]').disabled = true; // Deshabilitar el botón de envío
+
   try {
+    // Obtener el token de reCAPTCHA v3
     const token = await grecaptcha.execute(
       "6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA",
       { action: "submit" }
@@ -94,15 +98,15 @@ async function handleSubmit(event) {
       alert("Gracias por tu mensaje. En breve me pondré en contacto contigo.");
     } else {
       // Si hay un error en la respuesta
-      alert(
-        "Hubo un error al enviar el formulario. Por favor intenta nuevamente."
-      );
+      alert("Hubo un error al enviar el formulario. Por favor intenta nuevamente.");
     }
   } catch (error) {
     console.error("Error al enviar el formulario:", error);
-    alert(
-      "Hubo un error al enviar el formulario. Por favor intenta nuevamente."
-    );
+    alert("Hubo un error al enviar el formulario. Por favor intenta nuevamente.");
+  } finally {
+    // Ocultar el loader y habilitar el botón de envío
+    loader.style.display = 'none'; // Ocultar el loader
+    $form.querySelector('button[type="submit"]').disabled = false; // Habilitar el botón de envío
   }
 }
 
