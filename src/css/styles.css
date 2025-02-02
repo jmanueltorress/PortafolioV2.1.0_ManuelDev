@@ -230,6 +230,14 @@ footer a
   background-color:transparent;
   
 }
+input::placeholder {
+  opacity: 0; /* Oculta el placeholder */
+}
+
+input:focus::placeholder {
+  color: #a5a5a5; /* Azul */
+  opacity: 1; /* Asegura que el placeholder sea visible */
+}
 
 /*Animaciones css*/
     /* Animación del cursor parpadeante */

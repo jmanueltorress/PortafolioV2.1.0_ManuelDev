@@ -5,10 +5,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" href="./src/public/ico/fav.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./src/css/styles.css" />
-    <link rel="stylesheet" href="./src/css/mediaqueries.css">
+    <link rel="stylesheet" href="./src/css/mediaqueries.css" />
 
     <script defer src="./src/js/functions.js"></script>
-    <script src="./src/js/particles.js" defer></script>
+    
+
     <!-- flowbite -->
     <link
       href="https://cdn.jsdelivr.net/npm/flowbite@3.0.0/dist/flowbite.min.css"
@@ -48,7 +49,11 @@
       <nav class="nav d-flex">
         <a class="home-a" href="./index.html">
           <figure>
-            <img width="70px" src="./src/media/img/logo_manueldev-r.png" alt="logoweb">
+            <img
+              width="70px"
+              src="./src/media/img/logo_manueldev-r.png"
+              alt="logoweb"
+            />
           </figure>
         </a>
         <div class="nav-main">
@@ -63,11 +68,7 @@
       <!-- section-1 -->
       <section id="about" class="card-container-1 d-flex">
         <figure class="avatar d-flex center-x-y">
-          <img
-            id="profile-img"
-            src="./src/media/img/profile.png"
-            alt=""
-          />
+          <img id="profile-img" src="./src/media/img/profile.png" alt="" />
         </figure>
         <section
           id="section-principal"
@@ -137,13 +138,12 @@
       <!-- section-3 -->
 
       <section id="contact" class="card-container-3 d-flex">
-        <section id="section-principal" class="section-container-3 center-x-y d-flex" >
+        <section
+          id="section-principal"
+          class="section-container-3 center-x-y d-flex"
+        >
           <figure class="avatar d-flex center-x-y">
-            <img
-              id="contact-img"
-              src="./src/media/img/contact.png"
-              alt=""
-            />
+            <img id="contact-img" src="./src/media/img/contact.png" alt="" />
           </figure>
         </section>
 
@@ -165,7 +165,7 @@
                 name="email"
                 id="floating_email"
                 class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                placeholder=" "
+                placeholder="email@mail.com"
                 required
               />
               <label
@@ -215,7 +215,7 @@
                   name="contact_phone"
                   id="floating_phone"
                   class="block py-2.5 px-0 w-full text-sm text-white bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
-                  placeholder=" "
+                  placeholder="111-111-111"
                   required
                 />
                 <label
@@ -254,17 +254,19 @@
                 placeholder="Escriba su mensaje..."
               ></textarea>
             </div>
+            <!-- Campos ocultos para la IP y el país -->
+            <!-- <input type="hidden" name="ip" id="user-ip" />
+            <input type="hidden" name="country" id="user-country" /> -->
             <button
               type="submit"
-              class="cv-button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800" 
-              data-sitekey="6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA" 
-              data-callback='onSubmit' 
-              data-action='submit' 
+              class="cv-button text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+              data-sitekey="6LcKN8kqAAAAAJDr0LQ0Vl25RyBOlppD3cNQkZJA"
+              data-callback="onSubmit"
+              data-action="submit"
             >
               Enviar
             </button>
           </form>
-          
         </section>
       </section>
 
