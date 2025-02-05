@@ -3,7 +3,8 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = [
     "Web Developer",
     "Jr Frontend",
-    "UX/UI Designer",
+    "UX Writer",
+    "UX Performance",
     "TI Engineer",
     "Mentor",
   ];
