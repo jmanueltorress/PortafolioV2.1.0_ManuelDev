@@ -1,0 +1,37 @@
+/* Estilos para el banner de cookies */
+.cookie-banner {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background-color: rgba(0, 0, 0, 0.8); /* Fondo semi-transparente */
+    color: white;
+    text-align: center;
+    padding: 15px 10px;
+    z-index: 1000; /* Asegura que el banner se muestre encima de todo */
+    font-size: 16px;
+    transition: transform 0.5s ease-in-out; /* Transición suave para deslizamiento */
+    transform: translateY(0); /* Estado inicial (visible) */
+  }
+  
+  /* Estilo cuando el banner se desliza hacia abajo (ocultar) */
+  .cookie-banner.hide {
+    transform: translateY(100%); /* Mueve el banner hacia abajo, fuera de la vista */
+  }
+  
+  /* Estilo para los botones */
+  .cookie-banner button {
+    margin: 10px;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .cookie-banner button:hover {
+    background-color: #0056b3;
+  }
+  
+ 
+  
