@@ -44,6 +44,7 @@ html {
 }
 body {
   margin-top: 50px;
+  overflow-x: hidden;
   background-color: var(--color-obscuro-principal);
 }
 /*peer focus - formulario*/

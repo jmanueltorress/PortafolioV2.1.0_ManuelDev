@@ -101,8 +101,9 @@ async function handleSubmit(event) {
   } catch (error) {
     console.error("Error al enviar el formulario:", error);
     alert(
-      "Hubo un error al enviar el formulario. Por favor intenta nuevamente."
+      "¡Ups! Algo salió mal. Asegúrate de haber aceptado las cookies para que este formulario sea funcional."
     );
+    
   }
 }
 

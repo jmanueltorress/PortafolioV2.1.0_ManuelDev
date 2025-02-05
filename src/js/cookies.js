@@ -49,7 +49,7 @@ function showCookieBanner() {
     banner.classList.add('cookie-banner');
     banner.innerHTML = `
       <p>Este sitio usa cookies para mejorar tu experiencia. ¿Aceptas las cookies?</p>
-      <button id="acceptCookiesBtn">Aceptar</button>
+      <button id="acceptCookiesBtn">Aceptar Cookies</button>
       <button id="declineCookiesBtn">Rechazar</button>
     `;
     document.body.appendChild(banner);
