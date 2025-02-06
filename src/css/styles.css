@@ -1,3 +1,8 @@
+/*styles.css- main - importar estilos */
+@import url(./effects.css);
+@import url(./cookies.css);
+@import url(./loader.css);
+
 /* global-styles */
 @font-face {
   font-family: "TiltWarp-Regular"; /* Nombre que le das a la fuente */
@@ -43,6 +48,8 @@ html {
   scroll-behavior: smooth;
 }
 body {
+  cursor: none;
+  /* cursor: url('/src/media/img/cursor/cursor-3.png') 16 16, auto; */
   margin-top: 50px;
   overflow-x: hidden;
   background-color: var(--color-obscuro-principal);
@@ -72,6 +79,8 @@ body {
   bottom: 60px !important;     /* Mueve el badge hacia arriba (ajusta este valor según sea necesario) */
   /* right: 10px !important; */
 } 
+
+
 
 
 /*Form- Opcional: Cambiar el color de los labels en modo oscuro también */
@@ -408,7 +417,7 @@ input:focus::placeholder {
         flex-shrink: 0; /* Evita que las imágenes se compriman */
       }
   
-      /* Animación de deslizamiento */
+      /* Animación de deslizamiento carousel */
       @keyframes slide {
         0% {
           transform: translateX(0); /* Empieza desde la posición inicial */
@@ -459,25 +468,3 @@ input:focus::placeholder {
           
           
         }
-/* efecto giz con cursor */
-        .trazo {
-          position: absolute;
-          width: 20px;
-          height: 20px;
-          background-color: white; /* Color del trazo (como giz blanco) */
-          border-radius: 50%;
-          pointer-events: none; /* Para no interferir con otros elementos */
-          transform: scale(0);
-          animation: trazo 0.5s forwards;
-      }
-
-      @keyframes trazo {
-          0% {
-              transform: scale(0);
-              opacity: 1;
-          }
-          100% {
-              transform: scale(1);
-              opacity: 0;
-          }
-      }

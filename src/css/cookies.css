@@ -8,7 +8,7 @@
     color: white;
     text-align: center;
     padding: 15px 10px;
-    z-index: 1000; /* Asegura que el banner se muestre encima de todo */
+    z-index: 999; /* Asegura que el banner se muestre encima de todo */
     font-size: 16px;
     transition: transform 0.5s ease-in-out; /* Transición suave para deslizamiento */
     transform: translateY(0); /* Estado inicial (visible) */
