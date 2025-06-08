@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+       document.addEventListener('DOMContentLoaded', () => {
+  // Seleccionamos el contenedor y creamos la lupa
+  const contenedor = document.querySelector('.contenedor-body');
+
+  // Creamos el círculo (lupa) y lo agregamos al contenedor
+  const lupa = document.createElement('div');
+  lupa.classList.add('lupa');
+  contenedor.appendChild(lupa);
+
+  // Mostrar la lupa cuando el cursor está sobre el contenedor
+  contenedor.addEventListener('mouseenter', () => {
+    lupa.style.display = 'block';
+  });
+
+  // Mover la lupa con el mouse
+  contenedor.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX - contenedor.getBoundingClientRect().left;
+    const mouseY = e.clientY - contenedor.getBoundingClientRect().top;
+    
+    // Posicionar la lupa
+    const lupaSize = 100;
+    lupa.style.left = mouseX - (lupaSize / 2) + 'px'; // Centramos la lupa en el cursor
+    lupa.style.top = mouseY - (lupaSize / 2) + 'px'; // Centramos la lupa en el cursor
+  });
+
+  // Ocultar la lupa cuando el cursor sale del contenedor
+  contenedor.addEventListener('mouseleave', () => {
+    lupa.style.display = 'none';
+  });
+});
+
+
+    </script>
+    <style>
+      /* Estilo básico del contenedor */
+.contenedor-body {
+  position: relative;
+  width: 300px;
+  height: 100px;
+  background-color: #007bff;  /* Fondo original */
+  color: #ffffff;  /* Color de texto original */
+  font-size: 20px;
+  font-family: Arial, sans-serif;
+  text-align: center;
+  line-height: 100px;
+  border-radius: 10px;
+  overflow: hidden;
+  cursor: none;  /* Ocultamos el cursor */
+}
+
+/* Estilo de la lupa (el círculo) */
+.lupa {
+  position: absolute;
+  width: 100px;  /* Tamaño del círculo */
+  height: 100px;
+  border-radius: 50%;  /* Círculo perfecto */
+  background: rgba(255, 255, 255, 0.6);  /* Fondo del área de lupa */
+  pointer-events: none;  /* No bloquea la interacción */
+  transform: scale(2);  /* Aumenta el área dentro de la lupa */
+  display: none;  /* Inicialmente está oculta */
+  z-index: 10;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+}
+
+/* Cambio de color del texto y fondo dentro de la lupa */
+.contenedor-body:hover {
+  color: #FFF;  /* Cambia el color del texto fuera de la lupa */
+  background-color: #007bff;  /* Cambia el fondo del contenedor */
+}
+
+
+    </style>
+</head>
+<body>
+    <div class="contenedor-body">
+        Pasa el cursor sobre mí
+      </div>
+      
+</body>
+</html>

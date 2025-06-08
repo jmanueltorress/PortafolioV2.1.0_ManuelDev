@@ -3,7 +3,6 @@ document.addEventListener("DOMContentLoaded", function () {
   const words = [
     "Web Developer",
     "Jr Frontend",
-    "UX/UI Designer",
     "TI Engineer",
     "Mentor",
   ];
@@ -101,8 +100,9 @@ async function handleSubmit(event) {
   } catch (error) {
     console.error("Error al enviar el formulario:", error);
     alert(
-      "Hubo un error al enviar el formulario. Por favor intenta nuevamente."
+      "¡Ups! Algo salió mal. Asegúrate de haber aceptado las cookies para que este formulario sea funcional."
     );
+    
   }
 }
 
@@ -112,6 +112,39 @@ $form.addEventListener("submit", handleSubmit);
 
 // efecto giz con cursor
 document.addEventListener('mousemove', function(e) {
+ /* // Crear un nuevo trazo al mover el mouse
+  const trazo = document.createElement('div');
+  
+  trazo.classList.add('trazo');
+  document.body.appendChild(trazo);
+
+  // Posicionar el trazo en la posición del mouse
+ /* trazo.style.left = e.pageX - 10 + 'px'; // Centrado en el mouse
+  trazo.style.top = e.pageY - 10 + 'px';
+
+  // Eliminar el trazo después de la animación
+  setTimeout(() => {
+      trazo.remove();
+  }, 500);*/ // El tiempo de la animación es de 0.5s
+});
+
+document.addEventListener('mousemove', function(e) {
+  // Seleccionar el contenedor 'projects'
+  const projects = document.getElementById('projects');
+
+  // Verificar si el mouse está dentro del contenedor 'projects'
+  const rect = projects.getBoundingClientRect();
+  
+  // Usar e.clientX y e.clientY para obtener las coordenadas del mouse relativas a la ventana
+  const isInsideProjects = 
+    e.clientX >= rect.left && e.clientX <= rect.right &&
+    e.clientY >= rect.top && e.clientY <= rect.bottom;
+
+  // Si el mouse está dentro de 'projects', no crear el trazo
+  if (isInsideProjects) {
+    return; // Detiene la ejecución del código si está dentro de 'projects'
+  }
+
   // Crear un nuevo trazo al mover el mouse
   const trazo = document.createElement('div');
   trazo.classList.add('trazo');
@@ -123,6 +156,32 @@ document.addEventListener('mousemove', function(e) {
 
   // Eliminar el trazo después de la animación
   setTimeout(() => {
-      trazo.remove();
+    trazo.remove();
   }, 500); // El tiempo de la animación es de 0.5s
+});
+
+// Lógica de la lupa (ya existente)
+document.addEventListener('DOMContentLoaded', () => {
+  const contenedor = document.querySelector('#projects');
+
+  const lupa = document.createElement('div');
+  lupa.classList.add('lupa');
+  contenedor.appendChild(lupa);
+
+  contenedor.addEventListener('mouseenter', () => {
+    lupa.style.display = 'block';
+  });
+
+  contenedor.addEventListener('mousemove', (e) => {
+    const mouseX = e.clientX - contenedor.getBoundingClientRect().left;
+    const mouseY = e.clientY - contenedor.getBoundingClientRect().top;
+
+    const lupaSize = 100;
+    lupa.style.left = mouseX - (lupaSize / 2) + 'px';
+    lupa.style.top = mouseY - (lupaSize / 2) + 'px';
+  });
+
+  contenedor.addEventListener('mouseleave', () => {
+    lupa.style.display = 'none';
+  });
 });
