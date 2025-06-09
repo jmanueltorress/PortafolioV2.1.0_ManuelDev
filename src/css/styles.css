@@ -195,10 +195,11 @@ a {
 .card-container-3 .avatar img {
   padding: 20px 35px 0;
   width: 600px;
-   border-radius: 10% 25%;
-  transition: transform 0.3s ease;
-  
+  border-radius: 10% 25%;
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
 }
+
 /* .card-container-3 .avatar img:hover {
   
   transform: scale(1.1); ;
