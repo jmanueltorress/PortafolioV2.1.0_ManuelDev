@@ -48,12 +48,28 @@
     <title>Manuel Torres - Dev</title>
     
     <style>
-      /* Estilos para focus en los links del nav */
-      .nav-main a:focus {
+      /* Estilos para focus y active en los links del nav */
+      .nav-main a:focus,
+      .nav-main a:active,
+      .nav-main a.active {
         color: #00d4ff;
         outline: 2px solid #00d4ff;
         outline-offset: 2px;
         text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+        background: rgba(0, 212, 255, 0.1);
+        border-radius: 4px;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
+      }
+      
+      /* Hover effect que también activa el estado */
+      .nav-main a:hover {
+        color: #00d4ff;
+        text-shadow: 0 0 8px rgba(0, 212, 255, 0.6);
+        background: rgba(0, 212, 255, 0.05);
+        border-radius: 4px;
+        padding: 8px 12px;
+        transition: all 0.3s ease;
       }
       
       /* Estilos para el menú hamburguesa */
@@ -117,6 +133,8 @@
         opacity: 0;
         transform: translateY(30px);
         transition: all 0.3s ease;
+        padding: 15px 30px;
+        border-radius: 8px;
       }
       
       .mobile-nav-overlay.active a {
@@ -136,17 +154,17 @@
         transition-delay: 0.3s;
       }
       
-      .mobile-nav-overlay a:hover {
+      /* Estados activos para el menú móvil */
+      .mobile-nav-overlay a:hover,
+      .mobile-nav-overlay a:focus,
+      .mobile-nav-overlay a:active,
+      .mobile-nav-overlay a.active {
         color: #00d4ff;
         text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
         transform: scale(1.1);
-      }
-      
-      .mobile-nav-overlay a:focus {
-        color: #00d4ff;
+        background: rgba(0, 212, 255, 0.1);
         outline: 2px solid #00d4ff;
         outline-offset: 4px;
-        text-shadow: 0 0 15px rgba(0, 212, 255, 0.8);
       }
       
       /* Media queries para mostrar/ocultar elementos */
@@ -456,6 +474,49 @@
         if (e.key === 'Escape' && mobileNavOverlay.classList.contains('active')) {
           closeMobileMenu();
         }
+      });
+
+      // JavaScript para mantener el estado activo en la navegación
+      document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav-main a, .mobile-nav-overlay a');
+        
+        // Función para activar el link correspondiente según la sección visible
+        function setActiveLink() {
+          const sections = document.querySelectorAll('section[id]');
+          const scrollPos = window.scrollY + 100;
+          
+          sections.forEach(section => {
+            const sectionTop = section.offsetTop;
+            const sectionHeight = section.offsetHeight;
+            const sectionId = section.getAttribute('id');
+            
+            if (scrollPos >= sectionTop && scrollPos < sectionTop + sectionHeight) {
+              // Remover clase active de todos los links
+              navLinks.forEach(link => {
+                link.classList.remove('active');
+              });
+              
+              // Agregar clase active al link correspondiente
+              navLinks.forEach(link => {
+                if (link.getAttribute('href') === `#${sectionId}`) {
+                  link.classList.add('active');
+                }
+              });
+            }
+          });
+        }
+        
+        // Ejecutar al cargar la página y al hacer scroll
+        setActiveLink();
+        window.addEventListener('scroll', setActiveLink);
+        
+        // También activar al hacer clic en los links
+        navLinks.forEach(link => {
+          link.addEventListener('click', function() {
+            navLinks.forEach(l => l.classList.remove('active'));
+            this.classList.add('active');
+          });
+        });
       });
     </script>
   </body>
