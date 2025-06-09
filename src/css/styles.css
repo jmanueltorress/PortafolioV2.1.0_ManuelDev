@@ -21,8 +21,10 @@
   --color-obscuro-principal: #000;
   --color-obscuro-secundario: #000;
   --color-obscuro-terciario: #000000;
-  --color-enfasis: #03c988;
-  --color-enfasis-2: #03c987aa;
+  /* --color-enfasis: #03c988;
+  --color-enfasis-2: #03c987aa; */
+   --color-enfasis: #fff130;
+  --color-enfasis-2: #ffd900;
   --color-claro-w:#FFF;
   --font-size-titulos-primarios:25px;
   --font-size-titulos-secundarios:30px;
