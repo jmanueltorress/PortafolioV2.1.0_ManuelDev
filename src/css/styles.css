@@ -230,7 +230,35 @@ a {
   padding: 20px 0 0 20px;
 }
 
+/* stack tecnologico - no carousel */
+.tech-stack {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center; /* centra verticalmente si hay altura suficiente */
+  gap: 16px;
+  padding: 20px;
+  width: 100%;
+  max-width: 1000px;
+  margin: 0 auto; /* centra horizontalmente el contenedor */
+}
 
+.tech-stack img {
+  width: 60px;
+  height: 60px;
+  object-fit: contain; /* evita que se deformen */
+  border-radius: 50%; /* redondeo completo */
+  transition: transform 0.3s ease, filter 0.3s ease;
+  filter: grayscale(100%);
+  background-color: #fff; /* fondo blanco opcional para logos con transparencia */
+  padding: 6px; /* espacio interno opcional */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.tech-stack img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.1);
+}
 
 /* footer-pie de pagina */
 footer {
