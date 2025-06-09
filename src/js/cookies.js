@@ -97,9 +97,9 @@ function loadCalendlyScript() {
       console.log("Script de Calendly cargado correctamente.");
       Calendly.initBadgeWidget({
           url: "https://calendly.com/tjmanuel354/30min", // URL de tu Calendly
-          text: "Schedule a meeting with me", // Texto del botón
-          color: "#03c987aa", // Color de fondo del botón
-          textColor: "#ffffff", // Color del texto
+          text: "Agendar Meeting", // Texto del botón
+          color: "#ffd900", // Color de fondo del botón
+          textColor: "#000000", // Color del texto
       });
   };
 

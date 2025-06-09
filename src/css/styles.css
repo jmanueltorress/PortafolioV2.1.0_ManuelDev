@@ -455,13 +455,13 @@ input:focus::placeholder {
         /* Definimos la animación "flotante" */
         @keyframes floatingAnimation {
           0% {
-            transform: translate(-10%, -10%) translateY(0);
+            transform: translate(0%, 0%) translateY(0);
           }
           50% {
-            transform: translate(-10%, -10%) translateY(-15px);
+            transform: translate(0%, -10%) translateY(-15px);
           }
           100% {
-            transform: translate(-10%, -10%) translateY(0);
+            transform: translate(0%, 0%) translateY(0);
           }
         }
         
